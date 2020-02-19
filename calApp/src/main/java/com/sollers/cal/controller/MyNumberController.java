@@ -24,11 +24,10 @@ public class MyNumberController {
 	@Autowired
 	private MyNumberService numberService;
 	
-	 @RequestMapping(value = "/Course", method = RequestMethod.POST)
+	 @RequestMapping(value = "/App", method = RequestMethod.POST)
 	    @ResponseBody
 	    public MyNumber newMyNumber(@RequestBody MyNumber number) {
 		return numberService.save(number);
-	      //  return courseRepository.findById(course.getId());
 	    }
 	
 	@ResponseBody

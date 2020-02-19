@@ -21,7 +21,8 @@ public class MathOperation {
 	@Column
 	private double result;
 	
-	@Column(name="Operation Performed")
+	//@Column(name="Operation Performed")
+	@Column
 	private String operation;
 	
 	public double getNumber1() {

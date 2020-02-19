@@ -20,18 +20,18 @@ public class CalController {
 	@ResponseBody
 	@RequestMapping(value = "/AllOperationsPerformed", method = RequestMethod.GET)
 	public List<MathOperation> readAll() {
-		return null;
+		return services.ViewDataBase();
 	}
 	@RequestMapping(value = "/Addition", method = RequestMethod.POST)
 	@ResponseBody
 	public MathOperation add(@RequestBody MathOperation mathObject) {
-		return null;
+		return services.add(mathObject);
 	}
 	
 	@RequestMapping(value = "/Substraction", method = RequestMethod.POST)
 	@ResponseBody
 	public MathOperation Substract(@RequestBody MathOperation mathObject) {
-		return null;
+		return services.substract(mathObject);
 	}
 
 
