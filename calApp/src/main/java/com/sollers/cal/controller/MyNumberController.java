@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sollers.cal.domain.MyNumber;
 import com.sollers.cal.service.MyNumberService;
-import com.training.lms.domain.Course;
 
 
 @Controller
