@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sollers.cal.domain.MyNumber;
 import com.sollers.cal.service.MyNumberService;
+import com.training.lms.domain.Course;
 
 
 @Controller
@@ -23,6 +24,13 @@ public class MyNumberController {
 	
 	@Autowired
 	private MyNumberService numberService;
+	
+	 @RequestMapping(value = "/Course", method = RequestMethod.POST)
+	    @ResponseBody
+	    public MyNumber newMyNumber(@RequestBody MyNumber number) {
+		return numberService.save(number);
+	      //  return courseRepository.findById(course.getId());
+	    }
 	
 	@ResponseBody
 	@RequestMapping(value = "/App", method = RequestMethod.GET)
