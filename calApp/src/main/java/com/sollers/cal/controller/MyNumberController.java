@@ -108,8 +108,7 @@ public class MyNumberController {
     }
 	@RequestMapping(value = "/App/subtraction/{firstNumber}/{secondNumber}", method = RequestMethod.POST)
     @ResponseBody
-	 @CrossOrigin(origins="http://localhost:4200")
-
+    
     public MyNumber mySubtraction(
     		@PathVariable Integer firstNumber,@PathVariable Integer secondNumber) {
 		

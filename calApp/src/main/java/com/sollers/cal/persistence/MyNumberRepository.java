@@ -9,7 +9,7 @@ import com.sollers.cal.domain.MyNumber;
 
 public interface MyNumberRepository extends JpaRepository<MyNumber,Integer> {
 	
-	Optional<MyNumber> findTop10ByOrderByIdAsc();
+	Optional<MyNumber> findTopByOrderByIdAsc();
 	List<MyNumber>  findAllByOrderByIdDesc();
 
 }
