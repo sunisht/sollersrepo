@@ -36,7 +36,8 @@ public class MyNumberServiceImpl implements MyNumberService{
 	@Override
 	public List<MyNumber> findAll() {
 		// TODO Auto-generated method stub
-		return myNumberRepository.findAll();
+		//return myNumberRepository.findAll();
+		return myNumberRepository.findAllByOrderByIdDesc();
 	}
 
 }
