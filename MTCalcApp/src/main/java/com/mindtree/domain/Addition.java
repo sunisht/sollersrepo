@@ -6,40 +6,56 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 public class Addition {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Integer id;
-	@Column(name="augend")
-	Integer augend;
-	@Column(name="addend")
-	Integer addend;
+	Long id;
+	@Column(name="firstNumber")
+	Long firstNumber;
+	@Column(name="secondNumber")
+	Long secondNumber;
+	@Column(name="sum")
+	Long sum;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getAugend() {
-		return augend;
+	public Long getFirstNumber() {
+		return firstNumber;
 	}
-	public void setAugend(Integer augend) {
-		this.augend = augend;
+	public void setFirstNumber(Long firstNumber) {
+		this.firstNumber = firstNumber;
 	}
-	public Integer getAddend() {
-		return addend;
+	public Long getSecondNumber() {
+		return secondNumber;
 	}
-	public void setAddend(Integer addend) {
-		this.addend = addend;
+	public void setSecondNumber(Long secondNumber) {
+		this.secondNumber = secondNumber;
+	}
+	public Long getSum() {
+		return sum;
+	}
+	public Long setSum() {
+		this.sum = this.firstNumber+this.secondNumber;
+		return sum;
 	}
 	
-	public Addition(Integer id, Integer augend, Integer addend) {
+	@Autowired
+	public Addition() {
+		
+	}
+	public Addition(Long id, Long firstNumber, Long secondNumber) {
 		super();
 		this.id = id;
-		this.augend = augend;
-		this.addend = addend;
+		this.firstNumber = firstNumber;
+		this.secondNumber = secondNumber;
+		this.sum = firstNumber + secondNumber;
 	}
 	
 	

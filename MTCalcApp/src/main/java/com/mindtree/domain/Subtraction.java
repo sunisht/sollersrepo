@@ -9,39 +9,52 @@ import javax.persistence.Id;
 @Entity
 public class Subtraction {
 	@Id
+	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Integer id;
-	@Column(name="minuend")
-	Integer minuend;
-	@Column(name="subtrahend")
-	Integer subtrahend;
+	Long id;
+	@Column(name="firstNumber")
+	Long firstNumber;
+	@Column(name="secondNumber")
+	Long secondNumber;
+	@Column(name="difference")
+	Long difference;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getMinuend() {
-		return minuend;
+	public Long getFirstNumber() {
+		return firstNumber;
 	}
-	public void setMinuend(Integer minuend) {
-		this.minuend = minuend;
+	public void setFirstNumber(Long firstNumber) {
+		this.firstNumber = firstNumber;
 	}
-	public Integer getSubtrahend() {
-		return subtrahend;
+	public Long getSecondNumber() {
+		return secondNumber;
 	}
-	public void setSubtrahend(Integer subtrahend) {
-		this.subtrahend = subtrahend;
+	public void setSecondNumber(Long secondNumber) {
+		this.secondNumber = secondNumber;
 	}
 	
-	public Subtraction(Integer id, Integer minuend, Integer subtrahend) {
+	public Long setDifference() {
+		this.difference = this.firstNumber- this.secondNumber;
+		return difference;
+	}
+		
+	public Long getDifference() {
+		return difference;
+	}
+
+	public Subtraction() {
+		
+	}
+	public Subtraction(Long id, Long firstNumber, Long secondNumber) {
 		super();
 		this.id = id;
-		this.minuend = minuend;
-		this.subtrahend = subtrahend;
+		this.firstNumber = firstNumber;
+		this.secondNumber = secondNumber;
+		this.difference = firstNumber-secondNumber;
 	}
-	
-	
-
 }
