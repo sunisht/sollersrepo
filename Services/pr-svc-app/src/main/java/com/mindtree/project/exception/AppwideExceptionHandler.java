@@ -15,5 +15,4 @@ public class AppwideExceptionHandler {
 	public String inputsNotFoundException() {
 		return ("Please enter valid input");
 	}
-	
 }
