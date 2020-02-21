@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'styles/bootstrap-4.4.1-dist/css/bootstrap.min.css'
+#calculation{
+    position : relative;
+    box-align:percentage($number: 10);
+    left: 480px;
+    top:30px;
+    box-sizing: content-box;
+    width:20%;
+    text-align : center ;
+    border: 1px solid rgb(58, 74, 77);
+    margin: 2px;
+}
+ 

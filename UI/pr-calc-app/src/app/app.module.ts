@@ -1,34 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdditionComponent } from './addition/addition.component';
-import { SubtractionComponent } from './subtraction/subtraction.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ViewComponent } from './view/view.component';
-
+import { DataService } from './data.service';
+import { MathModule } from './math/math.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdditionComponent,
-    SubtractionComponent,
-    ViewComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    FormsModule,    
-    HttpClientModule
-
-
+    HttpClientModule,
+    MathModule
+    
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
