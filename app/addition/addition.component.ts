@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import { MathServiceService } from '../math-service.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-addition',
@@ -8,33 +9,29 @@ import { MathServiceService } from '../math-service.service';
   styleUrls: ['./addition.component.scss']
 })
 export class AdditionComponent implements OnInit {
-firstNumber;
-secondNumber;
-result;
-  http: any;
-  constructor(private mathServiceService: MathServiceService) {
-  this.firstNumber = mathServiceService.firstNumber;
-  this.secondNumber = mathServiceService.secondNumber;
-  this.result = mathServiceService.result;
-  } 
-  additionForm = new FormGroup({
-   firstNumber: new FormControl(''),
-   secondNumber: new FormControl(''),
+  firstNumber;
+  secondNumber;
+  result;
   
-  });
+  constructor(private mathServiceService: MathServiceService) {} 
+ 
+ 
   
    
-  
-  
-  
-
   ngOnInit(): void {
   }
-  add (firstNumber, secondNumber) {
-    console.log()
-    let addUrl="http://localhost:8080/add/${firstNumber}/${secondNumber}"
-    return this.http.get(addUrl)
-    .pipe(catchError(this.handleError)
-    );
+
+  add () {
+    console.log("hello");
+      this.mathServiceService.add(this.firstNumber,this.secondNumber)
+      .subscribe ((data :any)=>{
+      this.result=data.sum;
+      console.log(data);
+
+      })
+    
     }
-  }
+}
+    
+    
+  

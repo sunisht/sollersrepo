@@ -1,28 +1,27 @@
-<div class="grid">
 
 
-<h3>Addition:</h3>
-<form [formGroup]="additionForm">
+<h3>Addition</h3>
+<form>
 
 <label>
 First Number:
-<input type="number" [formControlName]="additionForm">
+<input type="number" [(ngModel)] ="firstNumber"
+name="firstNumber">
 </label>
-
-
 
 <label>
-
 Second Number: 
-<input type="number" [formControlName]="additionForm">
+<input type="number" [(ngModel)] ="secondNumber"
+name="secondNumber">
 </label>
+<p>
+Result: {{result}}
+</p>
 
+<br>
+
+<button  (click)="add()"  class="btn btn-success">Submit</button>
 </form>
 
-<div class="">
-<button class="btn btn-success"(click)="addition()">Submit</button>
-</div>
-</div>
-<div class="card-footer">
 
-</div>
+
