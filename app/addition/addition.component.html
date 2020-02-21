@@ -1,0 +1,28 @@
+<div class="grid">
+
+
+<h3>Addition:</h3>
+<form [formGroup]="additionForm">
+
+<label>
+First Number:
+<input type="number" [formControlName]="additionForm">
+</label>
+
+
+
+<label>
+
+Second Number: 
+<input type="number" [formControlName]="additionForm">
+</label>
+
+</form>
+
+<div class="">
+<button class="btn btn-success"(click)="addition()">Submit</button>
+</div>
+</div>
+<div class="card-footer">
+
+</div>
