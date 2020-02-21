@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mycompany</groupId>
-	<artifactId>calulatorApplication</artifactId>
+	<artifactId>lm-svc-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Calculator Application</name>
 	<description>Calculator Application</description>

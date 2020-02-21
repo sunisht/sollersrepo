@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sollers.calcapp</groupId>
-	<artifactId>calculator</artifactId>
+	<artifactId>ac-svc-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Calculator App</name>
 	<description>Calculator Application</description>

@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mindtree.project</groupId>
-	<artifactId>mtapp</artifactId>
+	<artifactId>pr-svc-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mindtreeProject</name>
 	<description>Demo project for Spring Boot</description>
