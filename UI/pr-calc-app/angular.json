@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "firstApp": {
+    "mt-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/firstApp",
+            "outputPath": "dist/mt-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,8 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+
             ],
             "scripts": []
           },
@@ -68,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "firstApp:build"
+            "browserTarget": "mt-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "firstApp:build:production"
+              "browserTarget": "mt-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "firstApp:build"
+            "browserTarget": "mt-app:build"
           }
         },
         "test": {
@@ -116,15 +118,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "firstApp:serve"
+            "devServerTarget": "mt-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "firstApp:serve:production"
+              "devServerTarget": "mt-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "firstApp"
+  "defaultProject": "mt-app"
 }

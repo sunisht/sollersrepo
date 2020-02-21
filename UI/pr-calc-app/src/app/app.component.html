@@ -1,47 +1,7 @@
-<html>
-  <div id="calculation">
-  <div>
-    <h4>Calculator</h4>
-  </div>
-  <div>
-    <style>
-      input[type=text] {
-        width: 70%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-      }
-    </style>
-    <div id="Calculation">
-      <h6>Add two numbers</h6>
-    </div>
-    <div>
-      FirstNumber: <input type="text" [(ngModel)]="firstNumber">
-      <br>
-      SecondNumber : <input type="text" [(ngModel)]="secondNumber">
-      <br>
-      <input type="button" (click)="addNumber()" value="Submit" />
-    </div>
-    <br>
-    <b>
-      {{result}}
-    </b>
-    <div>
-      <p> </p>
-      <h6>Substract two numbers</h6>
-    </div>
-    <div>
-      FirstNumber: <input type="text" [(ngModel)]="firstSubNumber" />
-      <br>
-      SecondNumber : <input type="text" [(ngModel)]="secondSubNumber" />
-      <br>
-      <input type="button" (click)="subtractNumber()" value="submit" />
-      <br>
-      <b>
-        {{subResult}}
-      </b>
-      <p>
-    </div>
-  </div>
-</div>
-</html>
+<router-outlet></router-outlet>
+
+
+<app-addition></app-addition>
+
+<app-subtraction></app-subtraction>
+<app-view></app-view>

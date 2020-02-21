@@ -1,0 +1,16 @@
+
+<div class="card-body border border-secondary">
+    <button class="btn btn-info" (click) = "viewHistory()">View History</button>
+    <table class="table">
+            <tr>
+                    <th scope="col">First Number</th>
+                    <th scope="col">Second Number</th>
+                    <th scope="col">Result</th>
+                </tr>
+        <tr *ngFor="let number of myNumber">
+            <td>{{number.firstNumber}}</td><td>{{number.secondNumber}}</td><td>{{number.result}}</td>
+
+
+        </tr>
+    </table>
+</div>
