@@ -1,0 +1,12 @@
+<h3 class="p-4">All Enrollments</h3>
+
+<div class="grid ">
+
+    <div class="row ml-3">
+
+        <div class="col-sm-3 m-2" *ngFor="let enrollment of enrollments">
+            <div class="card  "> {{enrollment.course.course}}
+            </div>
+        </div>
+    </div>
+</div>
