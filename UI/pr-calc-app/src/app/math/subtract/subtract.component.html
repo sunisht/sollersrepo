@@ -1,0 +1,29 @@
+<div id="calculation">
+    
+    <div>
+      <style>
+        input[type=text] {
+          width: 70%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+        }
+      </style>
+      <div id="Calculation">
+      
+        <h6>Subtract two numbers</h6>
+      </div>
+      <div>
+        FirstNumber: <input type="text" [(ngModel)]="firstSubNumber" />
+        <br>
+        SecondNumber : <input type="text" [(ngModel)]="secondSubNumber" />
+        <br>
+        <input type="button" (click)="subtractNumber()" value="submit" />
+        <br>
+        <b>
+          {{subResult}}
+        </b>
+        <p>
+      </div>
+    </div>
+  </div>

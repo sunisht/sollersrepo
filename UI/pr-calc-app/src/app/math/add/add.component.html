@@ -1,0 +1,28 @@
+<div id="calculation">
+  <div>
+    <style>
+      input[type=text] {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+    </style>
+    <div id="Calculation">
+      <h6>Add two numbers</h6>
+    </div>
+    <div>
+      FirstNumber: <input type="text" [(ngModel)]="firstNumber">
+      <br>
+      SecondNumber : <input type="text" [(ngModel)]="secondNumber">
+      <br>
+      <input type="button" (click)="addNumber()" value="Submit" />
+    </div>
+    <br>
+    <b>
+      {{result}}
+    </b>
+
+  </div>
+</div>
+
