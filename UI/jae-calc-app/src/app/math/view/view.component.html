@@ -1,0 +1,41 @@
+<div class="grid ">
+    <br />
+    <h3><b>Additions</b></h3>
+    <div class="row ml-3">
+
+        <div class="col-sm-3 m-2" *ngFor="let view of addViews">
+            <div class="card  ">
+
+                <div class="card-body ">
+                    <div class="card-text">First Number: {{view.firstNumber}}
+                    </div>
+                    <div class="card-text">Second Number: {{view.secondNumber}}
+                    </div>
+                    <div class="card-text">Result: {{view.sum}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid ">
+    <br />
+    <h3><b>Subtractions</b></h3>
+    <div class="row ml-3">
+
+        <div class="col-sm-3 m-2" *ngFor="let view of subtractViews">
+            <div class="card  ">
+
+                <div class="card-body ">
+                    <div class="card-text">First Number: {{view.firstNumber}}
+                    </div>
+                    <div class="card-text">Second Number: {{view.secondNumber}}
+                    </div>
+                    <div class="card-text">Result: {{view.difference}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

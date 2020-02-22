@@ -1,0 +1,21 @@
+<div class="grid ">
+    <div class="row ml-3">
+        <div class="col-sm-3 m-2">
+
+            <form [formGroup]="SubtractionForm" (ngSubmit)="onFormSubmit()">
+                <label><b>Subtraction Service</b></label>
+                <div class="form-group">
+                    <label for="firstNumber">First Number: <br /></label>
+                    <input class="form-control" type="text" formControlName="firstNumber">
+                </div>
+                <div class="form-group">
+                    <label for="secondNumber">Second Number: <br /></label>
+                    <input class="form-control" type="text" formControlName="secondNumber">
+                </div>
+                <span>{{result}}</span>
+                <br>
+                <button type="submit" class="btn btn-success" [disabled]="!SubtractionForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

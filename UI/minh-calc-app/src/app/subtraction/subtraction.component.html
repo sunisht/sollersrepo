@@ -1,0 +1,18 @@
+<div class="card-body border border-secondary ">
+    <h3 class="p-4">Subtraction Service</h3>
+
+    <form [formGroup]="numberForm" (ngSubmit)="onSubmit()">
+
+            <label for="name"> First Number:</label><br>
+        <input type="number" formControlName="firstNumber"><br>
+
+        <label for="name"> Second Number:</label><br>
+        <input type="number" formControlName="secondNumber"><br><br>
+
+        <button class="btn btn-primary" type="submit">Submit</button> 
+        <label for="name" style="margin-left:20px;background-color: yellow; 
+            width: 100px;text-align: center; display: inline-block" >{{result}}</label>
+        
+    </form>
+    
+</div>
