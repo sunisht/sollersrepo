@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+ * Author:Minh Nguyen
+ * Purpose: 
+ * 		-	This class to define  MyNumber class and reflect as MyNumber table in database with primary key id
+ * 			
+ */
 @Entity
 public class MyNumber {
 	@Id
@@ -18,11 +24,16 @@ public class MyNumber {
 	{
 		
 	}
-	public MyNumber( Integer firstNumber, Integer secondNumber) {
+	
+	public MyNumber(Integer id, Integer firstNumber, Integer secondNumber, Integer result) {
 		super();
+		this.id = id;
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
+		this.result = result;
 	}
+
+	
 	public Integer getFirstNumber() {
 		return firstNumber;
 	}
@@ -41,6 +52,16 @@ public class MyNumber {
 	public void setResult(Integer result) {
 		this.result = result;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	
 	
 
 }

@@ -1,0 +1,13 @@
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/domain/Addition.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/persistence/AdditionRepository.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/controller/HomeController.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/domain/Subtraction.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/controller/CalController.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/exception/IncorrectInputException.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/service/impl/ICalculatorService.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/service/impl/AdditionService.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/exception/DatabaseEmpty.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/exception/GenericError.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/CalculatorApplication.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/persistence/SubtractionRepository.java
+/home/unknown/Documents/SollersAssignments/nhCalcApp/src/main/java/com/sollers/calcapp/service/impl/SubtractionService.java

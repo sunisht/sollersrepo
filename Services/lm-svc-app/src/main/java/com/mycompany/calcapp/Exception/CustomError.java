@@ -1,4 +1,4 @@
-package com.mycompany.calcapp.Exception;
+package com.mycompany.calcapp.exception;
 
 public class CustomError {
 	Integer code;
@@ -15,6 +15,9 @@ public class CustomError {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public CustomError() {}
+	
 	public CustomError(Integer code, String description) {
 		super();
 		this.code = code;

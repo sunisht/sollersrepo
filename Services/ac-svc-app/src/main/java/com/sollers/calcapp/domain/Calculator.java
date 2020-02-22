@@ -10,21 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Table(name="Calculator")
 public class Calculator {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Integer id;
 
+	
 	@Column
 	(name="first number")
 	Integer firstNumber;
 
 	@Column
-	(name="second number")
+	(name = "second number")
 	Integer secondNumber;
-	@Column
-	(name="result")
+
+    @Column
 	Integer result;
 
 	public Integer getFirstNumber() {
@@ -52,12 +54,11 @@ public class Calculator {
 	}
 
 	public Integer getId() {
-		return id;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	
 

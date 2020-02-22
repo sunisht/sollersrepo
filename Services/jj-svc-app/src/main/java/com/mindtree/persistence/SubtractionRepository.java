@@ -9,7 +9,4 @@ import com.mindtree.domain.Subtraction;
 @Repository
 public interface SubtractionRepository extends JpaRepository<Subtraction, Long>{
 	List<Subtraction> findAll();
-	Subtraction findOneById(long subtractionId);
-
-	
 }

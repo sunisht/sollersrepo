@@ -1,0 +1,29 @@
+<div class="grid ">
+    <div class=" col-sm-12 m-2">
+        <div class="card  ">
+            <h4 class="p-4">All Operations Performed</h4>
+            <ul class="list-group">
+                <div  *ngFor="let operation of operations">
+                    <li class="list-group-item">
+                         {{operation.number1}} {{operation.operation}} {{operation.number2}} =
+                        {{operation.result}}
+                    </li>
+                </div>
+            </ul>
+<!-- 
+            <div class="row ml-3">
+                <div class="col-sm-3 m-1" *ngFor="let operation of operations">
+                    <div class="card  ">
+                        <div class="card-body ">
+                            <div class="card-text">
+                                {{operation.number1}} {{operation.operation}} {{operation.number2}} =
+                                {{operation.result}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+</div>

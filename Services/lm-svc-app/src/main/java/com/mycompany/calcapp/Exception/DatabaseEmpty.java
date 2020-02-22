@@ -1,4 +1,4 @@
-package com.mycompany.calcapp.Exception;
+package com.mycompany.calcapp.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

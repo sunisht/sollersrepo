@@ -12,27 +12,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mycompany.calcapp.Exception.CustomError;
 import com.mycompany.calcapp.domain.MathOperation;
+import com.mycompany.calcapp.exception.CustomError;
 import com.mycompany.calcapp.services.CalculatorServices;
-
+/**
+ * 
+ * @author Lawrence Nkafu
+ * Controller class
+ * contains mapping to addition, subtraction endpoints
+ *
+ */
 @Controller
 @CrossOrigin(origins="*",allowedHeaders="*")
-//@CrossOrigin(origins="http://localhost:4200")
 public class CalController {
 	@Autowired
 	CalculatorServices services;
 	
+	/**
+	 * Returns a lists all operations performed which are stored in the database.
+	 * Makes use of a service class to retrieve from database 
+	 * @return ResponseEntity
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/Operations", method = RequestMethod.GET)
 	public ResponseEntity<?> readAll() {
-		List<MathOperation> list = services.ViewDataBase();
+		List<MathOperation> list = services.viewDatabase();
 		if (list.isEmpty()) {
 			CustomError error = new CustomError(100," Database is empty");
 			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
 		}
-		return  new ResponseEntity<List<MathOperation>>(list,HttpStatus.OK);
+		return  new ResponseEntity<>(list,HttpStatus.OK);
 	}
+	
+	/**
+	 * End point to perform addition. Makes use of a service class to perform the said functionality
+	 * @param mathObject
+	 * @return
+	 */
 	@RequestMapping(value = "/Addition", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<?> add(@RequestBody MathOperation mathObject) {
@@ -43,20 +59,24 @@ public class CalController {
 			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
 		}
 		MathOperation obj = services.add(mathObject);
-		return  new ResponseEntity<MathOperation>(obj,HttpStatus.OK);
+		return  new ResponseEntity<>(obj,HttpStatus.OK);
 	}
 	
-	//@CrossOrigin(origins="http://localhost:4200")
+	/**
+	 * Endpoint to perform subtraction. makes use of a service method to perform the said operation
+	 * @param mathObject
+	 * @return
+	 */
 	@RequestMapping(value = "/Subtraction", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<?> Substract(@RequestBody MathOperation mathObject) {
+	public ResponseEntity<?> subtract(@RequestBody MathOperation mathObject) {
 		if (mathObject == null) {
 			CustomError error = new CustomError(100," Error performing addition operaiton. No "
 					+ "data was stored in the Database");
 			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
 		}
-		MathOperation obj = services.substract(mathObject);
-		return  new ResponseEntity<MathOperation>(obj,HttpStatus.OK);
+		MathOperation obj = services.subtract(mathObject);
+		return  new ResponseEntity<>(obj,HttpStatus.OK);
 	}
 
 

@@ -15,25 +15,16 @@ public class AdditionServiceImpl implements AdditionService{
 
 	@Autowired
 	private AdditionRepository additionRepository;
-
-	@Autowired
-	private Addition addition;
 	
 	@Override
 	public List<Addition> findAll() {
 		return additionRepository.findAll();
 	}
 
-	
+	@Override
 	@Transactional
-	public Addition add(Long firstNumber, Long secondNumber) {
-		addition.setFirstNumber(firstNumber);
-		addition.setSecondNumber(secondNumber);
-		System.out.println("first num passed in service "+firstNumber);
-		System.out.println("first num passed in service "+secondNumber);
-		System.out.println("first num in service "+addition.getFirstNumber());
-		System.out.println("first num in service "+addition.getSecondNumber());
-		
+	public Addition addRequest(Addition addition) {
+		addition.setId(additionRepository.count()+1);
 		addition.setSum();
 		additionRepository.save(addition);
 		return addition;

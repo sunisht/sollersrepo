@@ -1,0 +1,56 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<div ng-app="addition-app">
+<h3 class="p-4">Addition</h3>
+
+<div class="grid ">
+
+    <div class="row ml-3">
+
+        <div class="card  ">
+            <div class="card-body ">
+
+                <h5 class="card-title">
+                </h5>
+
+            </div>
+
+
+        </div>
+
+        <div class=" col-sm-3 m-2">
+            <div class="card  ">
+                <div class="card-body ">
+                    <h3> Addition</h3>
+                    <form [formGroup]="additionForm" (ngSubmit)="onFormSubmit()">
+                        <div class="form-group">
+                            <label ng-model="firstNum">First Number</label>
+                            <input class="form-control" type="number">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label ng-model="secondNum">Second Number</label>
+                            <input class="form-control" type="number">
+                        </div>
+                        
+
+                        <br>
+                        <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                    <p>Result</p>
+                    <p ng-bind="result">{{ result }}</p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</body>

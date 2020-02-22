@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Addition {
 	@Id
+	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 	@Column(name="firstNumber")

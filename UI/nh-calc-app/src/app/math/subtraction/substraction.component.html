@@ -1,0 +1,52 @@
+<body>
+<div ng-app="subtraction-app">
+    <h3 class="p-4">Subtraction</h3>
+
+    <div class="grid ">
+
+        <div class="row ml-3">
+
+            <div class="card  ">
+                <div class="card-body ">
+
+                    <h5 class="card-title">
+                    </h5>
+
+                </div>
+
+
+            </div>
+
+            <div class=" col-sm-3 m-2">
+                <div class="card  ">
+                    <div class="card-body ">
+                        <h3> Addition</h3>
+                        <form [formGroup]="subtractionForm" (ngSubmit)="onFormSubmit()">
+                            <div class="form-group">
+                                <label for="firstNum">First Number</label>
+                                <input class="form-control"  type="number">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="secondNum">Second Number</label>
+                                <input class="form-control" type="number">
+                            </div>
+
+
+                            <br>
+                            <button type="submit" class="btn btn-success">Submit</button>
+
+                        </form>
+                        <p ng-model="result">Result</p>
+                        <p ng-bind="result">{{  }}</p>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>

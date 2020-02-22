@@ -26,44 +26,48 @@ public class MyNumberController {
 	@Autowired
 	private MyNumberService numberService;
 	
-	 
-	 @RequestMapping(value = "/App", method = RequestMethod.POST)
-	 @CrossOrigin(origins="http://localhost:4200")
-	    @ResponseBody
-	    
-	    public MyNumber newMyNumber(@RequestBody MyNumber number) {
+	 /**
+	  * Purpose: Create a new MyNumber object and save in database
+	  * @param number
+	  * @return
+	  */
+	@RequestMapping(value = "/App", method = RequestMethod.POST)
+	@CrossOrigin(origins = "http://localhost:4200")
+	@ResponseBody
+
+	public MyNumber newMyNumber(@RequestBody MyNumber number) {
 		return numberService.save(number);
-	    }
+	}
 	
-	 
+	
+	/**
+	 * Purpose: Get all records in MyNumber table
+	 * @return
+	 */
 	 
 	@ResponseBody
 	@RequestMapping(value = "/App", method = RequestMethod.GET)
-	 @CrossOrigin(origins="http://localhost:4200")
-	public List<MyNumber> getNumber()
-	{
-		 return numberService.findAll();
+	@CrossOrigin(origins = "http://localhost:4200")
+	public List<MyNumber> getNumber() {
+		return numberService.findAll();
 	}
 
-	
+	/**
+	 * Purpose: addition firstNumber, secondNumber and return the MyNumber object, which has been create
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return
+	 */
 	@RequestMapping(value = "/App/addition/{firstNumber}/{secondNumber}", method = RequestMethod.GET)
-    @ResponseBody
-	 @CrossOrigin(origins="http://localhost:4200")
+	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
 
-    public MyNumber addtion(
-    		@PathVariable Integer firstNumber,@PathVariable Integer secondNumber) {
-		
-		int result= firstNumber + secondNumber;
-		JSONObject jo = new JSONObject();
-		jo.put("firstNumber", firstNumber);
-		jo.put("secondNumber", secondNumber);
-		jo.put("result", result);
+	public MyNumber addtion(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
 
+		int result=numberService.add(firstNumber,secondNumber);		
+		JSONObject jo=numberService.converToJson(firstNumber, secondNumber, result);
 		ObjectMapper mapper = new ObjectMapper();
-		
-
-		MyNumber obj= new MyNumber();
-		
+		MyNumber obj = new MyNumber();
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
@@ -73,27 +77,27 @@ public class MyNumberController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return numberService.save(obj);
-    }
+	}
+
+	/**
+	 * purpose: add firstNumber and secondNumber
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return
+	 */
 	@RequestMapping(value = "/App/addition/{firstNumber}/{secondNumber}", method = RequestMethod.POST)
-    @ResponseBody
-	 @CrossOrigin(origins="http://localhost:4200")
+	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
 
-    public MyNumber myAddtion(
-    		@PathVariable Integer firstNumber,@PathVariable Integer secondNumber) {
-		
-		int result= firstNumber + secondNumber;
-		JSONObject jo = new JSONObject();
-		jo.put("firstNumber", firstNumber);
-		jo.put("secondNumber", secondNumber);
-		jo.put("result", result);
+	public MyNumber myAddtion(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
 
+		int result=numberService.add(firstNumber,secondNumber);
+		JSONObject jo=numberService.converToJson(firstNumber, secondNumber, result);
 		ObjectMapper mapper = new ObjectMapper();
-		
+		MyNumber obj = new MyNumber();
 
-		MyNumber obj= new MyNumber();
-		
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
@@ -103,26 +107,31 @@ public class MyNumberController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return numberService.save(obj);
-    }
+	}
+	
+	/**
+	 * Purpose:subtract firstNumber and secondNumber
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return
+	 */
+
 	@RequestMapping(value = "/App/subtraction/{firstNumber}/{secondNumber}", method = RequestMethod.POST)
-    @ResponseBody
-    
-    public MyNumber mySubtraction(
-    		@PathVariable Integer firstNumber,@PathVariable Integer secondNumber) {
-		
-		int result= firstNumber - secondNumber;
-		JSONObject jo = new JSONObject();
-		jo.put("firstNumber", firstNumber);
-		jo.put("secondNumber", secondNumber);
-		jo.put("result", result);
+	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
+
+	public MyNumber mySubtraction(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
+
+		int result=numberService.subtraction(firstNumber,secondNumber);
+
+		JSONObject jo=numberService.converToJson(firstNumber, secondNumber, result);
 
 		ObjectMapper mapper = new ObjectMapper();
-		
 
-		MyNumber obj= new MyNumber();
-		
+		MyNumber obj = new MyNumber();
+
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
@@ -132,26 +141,28 @@ public class MyNumberController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return numberService.save(obj);
-    }
+	}
+	
+	/**
+	 * purpose:subtract first and second number, return the MyNumber object
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return
+	 */
 
 	@RequestMapping(value = "/App/subtraction/{firstNumber}/{secondNumber}", method = RequestMethod.GET)
-    @ResponseBody
-    public MyNumber subtraction(
-    		@PathVariable Integer firstNumber,@PathVariable Integer secondNumber) {
-		
-		int result= firstNumber - secondNumber;
-		JSONObject jo = new JSONObject();
-		jo.put("firstNumber", firstNumber);
-		jo.put("secondNumber", secondNumber);
-		jo.put("result", result);
+	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
 
+	public MyNumber subtraction(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
+
+		int result=numberService.add(firstNumber,secondNumber);
+		JSONObject jo=numberService.converToJson(firstNumber, secondNumber, result);
 		ObjectMapper mapper = new ObjectMapper();
-		
+		MyNumber obj = new MyNumber();
 
-		MyNumber obj= new MyNumber();
-		
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
@@ -161,8 +172,25 @@ public class MyNumberController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return numberService.save(obj);
-    }
+	}
+	
+	/**
+	 * purpose: get the top records in MyNumber table
+	 * 
+	 */
+
+	@RequestMapping(value = "/App/getTop", method = RequestMethod.GET)
+	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
+
+	public MyNumber getTop() throws RuntimeException {
+		
+		MyNumber number = numberService.findTop().get();
+		
+
+		return number;
+	}
 
 }
