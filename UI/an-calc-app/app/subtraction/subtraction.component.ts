@@ -10,12 +10,8 @@ export class SubtractionComponent implements OnInit {
   firstNumber;
   secondNumber;
   result;
-  http: any;
-  constructor(private mathServiceService: MathServiceService) { 
-  this.firstNumber = mathServiceService.firstNumber;
-  this.secondNumber= mathServiceService.secondNumber;
-  this.result = mathServiceService.result;
-  }
+
+  constructor(private mathServiceService: MathServiceService) {  }
   subtractionForm = new FormGroup ({
  FirstNumber: new FormControl(''),
  SecondNumber: new FormControl(''),
@@ -23,12 +19,13 @@ export class SubtractionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  subtract (firstNumber, secondNumber) {
-    console.log()
-    let subtractUrl="http://localhost:8080/add/${firstNumber}/${secondNumber}"
-    return this.http.get(subtractUrl)
+  
+  subtract(){
+    this.mathServiceService.subtract(this.firstNumber, this.secondNumber)
+    .subscribe((data:any) =>{
+    this.result=data.result;
+    console.log(data);
+    });
     
-    
- 
   }
 }

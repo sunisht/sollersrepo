@@ -1,26 +1,28 @@
-<div class="grid">
 
-<div class="row ml-3">
-<div class=column-sm-3 n-2>
+
+
+
 
 <h3>Subtraction:</h3> 
 
-<form [formGroup]= "subtractionForm">
+<form>
+    
+    <label>
+        First Number:
+        <input type="number" [(ngModel)] ="firstNumber"
+        name="firstNumber">
+        </label>
+        
+        <label>
+        Second Number: 
+        <input type="number" [(ngModel)] ="secondNumber"
+        name="secondNumber">
+        </label>
 
-<label>
-First Number:
-<input type="number" [formControlName]="subtractionForm">
-</label>
 
-<label>
-Second Number:
-<input type="number" [formControlName]="subtractionForm">
-</label>
+
+<br>
+<div class="card-footer">
+    <button class="btn btn-success"(click)="subtract()">Submit</button>
+    </div>
 </form>
-
-</div> 
-</div>
-<div class="">
-    <button class="btn btn-success"(click)="addition()">Submit</button>
-    </div>
-    </div>

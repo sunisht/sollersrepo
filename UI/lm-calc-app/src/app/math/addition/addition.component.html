@@ -1,60 +1,39 @@
-<h3 class="p-4">All Addition Operations Performed</h3>
+
 
 <div class="grid ">
 
     <div class="row ml-3">
-
-        <div class="col-sm-3 m-2" *ngFor="let operation of operations">
+        
+        <div class=" col-sm-12 m-2">
             <div class="card  ">
                 <div class="card-body ">
-
-                    <h5 class="card-title">
-                    </h5>
-
-
-                    <div class="card-text" >
-                        {{operation.number1}} + {{operation.number2}} = {{operation.result}}
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class=" col-sm-3 m-2">
-            <div class="card  ">
-                <div class="card-body ">
-                    <h3>Perform Addition</h3>
+                    <h4>Perform Addition</h4>
                     <form [formGroup]="additionForm" (ngSubmit)="onFormSubmit()">
                         <div class="form-group">
                             <label for="name">First Number</label>
                             <input class="form-control" type="number" formControlName="number1">
                         </div>
-
-
                         <div class="form-group">
                             <label for="faculty">Second Number</label>
                             <input class="form-control" type="number" formControlName="number2">
                         </div>
-
-
-                        <div class="form-group">
-
+                        <div>
+                            <label for="faculty">Result:</label>
+                            <label for="faculty"> &nbsp; {{backendResult}}</label>
                         </div>
-
-                        
-
                         <br>
-                        <button type="submit" class="btn btn-success">Submit</button>
-
-
-
+                        <button type="submit" class="btn btn-success">Submit</button>  &nbsp;
+                        <button type="reset" (click)="onReset()" class="btn btn-danger">Reset</button>
                     </form>
-
                 </div>
             </div>
-
-
         </div>
+
+        
+
+
+        
+
+        
     </div>
+</div>

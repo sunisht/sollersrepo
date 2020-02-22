@@ -11,34 +11,12 @@ import { MathService } from 'src/app/math.service';
 export class AdditionComponent implements OnInit {
 
   operations: any[]
+   backendResult
   constructor(private mathServices: MathService) {
-    this.mathServices.operations.subscribe((data) => {
-      this.operations = data;
-    });
+    this.backendResult = 0;
   }
 
-  ngOnInit() {
-    this.showOperationsWithError();
-    this.mathServices.operations.subscribe((data) => {
-      this.operations = data;
-    });
-  }
-
-
-
-  getOperationsWithHeader() {
-    this.mathServices.getOperationsWithHeader()
-      .subscribe((data: any) => {
-        this.operations = data
-        console.log(data)
-      });
-  }
-  showOperationsWithError() {
-    this.mathServices.getOperationsWithError()
-      .subscribe((data: any) => {
-        this.operations = data
-        console.log(data)
-      });
+  ngOnInit() {  
   }
 
   additionForm = new FormGroup({
@@ -48,14 +26,16 @@ export class AdditionComponent implements OnInit {
 
   onFormSubmit() {
     let newOperation = this.additionForm.value;
-
-    console.log(newOperation);
-    this.mathServices.save(newOperation)
+     this.mathServices.add(newOperation)
       .subscribe((data: any) => {
-        this.showOperationsWithError();
-        console.log(data)
+        this.mathServices.showOperations();
+        this.backendResult = data.result;
       });
+  }
 
+  onReset() {
+    console.log("resetting")
+    this.backendResult = 0;
     this.additionForm.reset();
   }
 

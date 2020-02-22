@@ -7,10 +7,11 @@ import { SubstractionComponent } from './substraction/substraction.component';
 import { MathHomeComponent } from './math-home/math-home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewComponent } from './view/view.component';
 
 
 @NgModule({
-  declarations: [AdditionComponent, SubstractionComponent, MathHomeComponent],
+  declarations: [AdditionComponent, SubstractionComponent, MathHomeComponent, ViewComponent],
   imports: [
     CommonModule,
     MathRoutingModule,

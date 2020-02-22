@@ -9,14 +9,11 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MathService {
-  public tempOperations;
   public operations: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
   operationsUrl = "http://localhost:8080/Operations"
 
   constructor(private http: HttpClient) {
-    
-    this.operations.next(this.tempOperations)
 
   }
   
@@ -37,8 +34,8 @@ export class MathService {
 };
 
 
-  save(operation) {
-    console.log("Saving")
+  add(operation) {
+    console.log("adding in the backend")
     let operationeUrl = "http://localhost:8080/Addition"
     return this.http.post(operationeUrl, operation)
       .pipe(
@@ -46,25 +43,28 @@ export class MathService {
       );
   }
 
-
-  getOperations() {
-    this.http.get(this.operationsUrl)
-  }
-
-    getOperationsWithHeader() {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'content-Type': 'application/json',
-        })
-      };
-      return this.http.get(this.operationsUrl,httpOptions)
+  subtract(operation) {
+    console.log("Saving")
+    let operationeUrl = "http://localhost:8080/Subtraction"
+    return this.http.post(operationeUrl, operation)
       .pipe(
         catchError(this.handleError)
-      )
-    }
-  getOperationsWithError() {
+      );
+  }
+
+
+  showOperations() {
+    this.getOperations()
+      .subscribe((data: any) => {
+        this.operations.next(data);
+        console.log("math services" + data)
+      });
+  }
+  
+  getOperations() {
     return this.http.get(this.operationsUrl)
       .pipe(catchError(this.handleError))
+    
   }
 
 
