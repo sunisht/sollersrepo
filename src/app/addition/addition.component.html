@@ -1,0 +1,28 @@
+
+<div class="card">
+<div class="card-body">
+<h3>Addition:</h3>
+<form>
+
+
+<p>First Number:
+<input type="number" [(ngModel)] ="firstNumber"
+name="firstNumber"/><br/>
+</p>
+
+<p>Second Number: 
+<input type="number" [(ngModel)] ="secondNumber"
+name="secondNumber"/>
+</p>
+
+<p>
+Result: {{result}}
+</p>
+
+<br>
+
+<button  (click)="add()"  class="btn btn-success">Submit</button>
+</form>
+</div>
+</div>
+

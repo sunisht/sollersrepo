@@ -1,0 +1,26 @@
+<div class="grid">
+
+<div class="row ml-3">
+<div class=column-sm-3 n-2>
+
+<h3>Subtraction:</h3> 
+
+<form [formGroup]= "subtractionForm">
+
+<label>
+First Number:
+<input type="number" [formControlName]="subtractionForm">
+</label>
+
+<label>
+Second Number:
+<input type="number" [formControlName]="subtractionForm">
+</label>
+</form>
+
+</div> 
+</div>
+<div class="">
+    <button class="btn btn-success"(click)="addition()">Submit</button>
+    </div>
+    </div>
