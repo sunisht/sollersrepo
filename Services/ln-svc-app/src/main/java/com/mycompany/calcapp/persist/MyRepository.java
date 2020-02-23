@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.mycompany.calcapp.domain.MathOperation;
 /**
- * extends Jpa repository 
+ * Extends Jpa repository 
  * @author Lawrence Nkafu
  *
  */

@@ -37,10 +37,6 @@ public class CalController {
 	@RequestMapping(value = "/Operations", method = RequestMethod.GET)
 	public ResponseEntity<?> readAll() {
 		List<MathOperation> list = services.viewDatabase();
-		if (list.isEmpty()) {
-			CustomError error = new CustomError(100," Database is empty");
-			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
-		}
 		return  new ResponseEntity<>(list,HttpStatus.OK);
 	}
 	
@@ -59,7 +55,7 @@ public class CalController {
 			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
 		}
 		MathOperation obj = services.add(mathObject);
-		return  new ResponseEntity<>(obj,HttpStatus.OK);
+		return  new ResponseEntity<>(obj,HttpStatus.CREATED);
 	}
 	
 	/**
@@ -76,7 +72,7 @@ public class CalController {
 			new ResponseEntity<CustomError>(error,HttpStatus.NOT_FOUND);
 		}
 		MathOperation obj = services.subtract(mathObject);
-		return  new ResponseEntity<>(obj,HttpStatus.OK);
+		return  new ResponseEntity<>(obj,HttpStatus.CREATED);
 	}
 
 
