@@ -100,11 +100,11 @@ public class MyNumberController {
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+			
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+
 		}
 
 		return numberService.save(obj);
@@ -134,11 +134,11 @@ public class MyNumberController {
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+
 		}
 
 		return numberService.save(obj);
@@ -165,11 +165,9 @@ public class MyNumberController {
 		try {
 			obj = mapper.readValue(jo.toString(), MyNumber.class);
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 		return numberService.save(obj);
