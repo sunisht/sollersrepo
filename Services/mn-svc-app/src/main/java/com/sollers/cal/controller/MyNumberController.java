@@ -1,7 +1,6 @@
 package com.sollers.cal.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -185,7 +184,7 @@ public class MyNumberController {
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
 
-	public MyNumber getTop() throws RuntimeException {
+	public MyNumber getTop() {
 		
 		MyNumber number = numberService.findTop().get();
 		
