@@ -61,7 +61,7 @@ public class MyNumberController {
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
 
-	public MyNumber addtion(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
+	public MyNumber addition(@PathVariable Integer firstNumber, @PathVariable Integer secondNumber) {
 
 		int result=numberService.add(firstNumber,secondNumber);		
 		JSONObject jo=numberService.converToJson(firstNumber, secondNumber, result);
