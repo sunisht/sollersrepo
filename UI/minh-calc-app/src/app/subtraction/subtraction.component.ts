@@ -24,8 +24,8 @@ export class SubtractionComponent implements OnInit {
   onSubmit() {
     this.myNumber=this.numberForm.value;  
     let myActualNumber={
-        'firstNumber':parseInt(this.myNumber['firstNumber'] ),
-        'secondNumber':parseInt(this.myNumber['secondNumber'] )
+        'firstNumber':this.myNumber['firstNumber'] ,
+        'secondNumber':this.myNumber['secondNumber'] 
        }
 
     this.mathService.subtraction(myActualNumber)
