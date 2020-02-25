@@ -9,5 +9,4 @@ public class MindtreeProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MindtreeProjectApplication.class, args);
 	}
-
 }
