@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Component
 public class Addition {
 	@Id
 	@Column(name="id")
@@ -42,6 +41,7 @@ public class Addition {
 		this.secondNumber = secondNumber;
 	}
 	public Long getSum() {
+		this.setSum();
 		return sum;
 	}
 	public Long setSum() {
@@ -49,10 +49,17 @@ public class Addition {
 		return sum;
 	}
 	
-	@Autowired
 	public Addition() {
 		
 	}
+	
+	public Addition(Long firstNumber, Long secondNumber) {
+		super();
+		this.firstNumber = firstNumber;
+		this.secondNumber = secondNumber;
+		this.sum = firstNumber + secondNumber;
+	}
+	
 	public Addition(Long id, Long firstNumber, Long secondNumber) {
 		super();
 		this.id = id;

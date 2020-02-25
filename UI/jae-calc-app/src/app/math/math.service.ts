@@ -48,7 +48,6 @@ export class MathService {
     this.getAdditions()
       .subscribe((data: any) => {
         this.additions.next(data);
-        console.log("math services" + data)
       });
   }
 
@@ -56,7 +55,6 @@ export class MathService {
     this.getSubtractions()
       .subscribe((data: any) => {
         this.subtractions.next(data);
-        console.log("math services" + data)
       });
   }
 

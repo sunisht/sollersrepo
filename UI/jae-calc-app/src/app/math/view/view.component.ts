@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MathService } from 'src/app/math.service';
+import { MathService } from 'src/app/math/math.service';
 
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })
-export class AddViewComponent implements OnInit {
+export class ViewComponent implements OnInit {
 
   operations
   addViews
@@ -16,13 +16,11 @@ export class AddViewComponent implements OnInit {
 
   }
 
-
-
   ngOnInit() {
     this.mathService.showAdditions();
     this.mathService.additions.subscribe((data) => {
       this.addViews = data;
-      this.addViews= this.addViews.slice().reverse();
+      this.addViews = this.addViews.slice().reverse();
     });
     this.mathService.showSubtractions();
     this.mathService.subtractions.subscribe((data) => {
@@ -30,20 +28,5 @@ export class AddViewComponent implements OnInit {
       this.subtractViews = this.subtractViews.slice().reverse();
     });
   }
-
-    getViews(){
-      this.mathService.getAdditions()
-        .subscribe((data: any) => {
-          this.addViews = data
-          this.addViews = this.addViews.slice().reverse();
-          console.log("add Views ",data)
-        });
-      this.mathService.getSubtractions()
-        .subscribe((data: any) => {
-          this.subtractViews = data
-          this.subtractViews = this.subtractViews.slice().reverse();
-          console.log("subtract Views ", data)
-        });
-    }
 }
 

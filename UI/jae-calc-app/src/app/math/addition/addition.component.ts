@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MathService } from 'src/app/math.service';
+import { MathService } from 'src/app/math/math.service';
 
 @Component({
   selector: 'app-addition',
@@ -14,14 +14,12 @@ export class AdditionComponent implements OnInit {
   AdditionForm = new FormGroup({
     firstNumber: new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
     secondNumber: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
-
   });
 
   constructor(private additionService: MathService) {
   }
 
   ngOnInit() {
-
   }
 
   add() {
@@ -31,7 +29,6 @@ export class AdditionComponent implements OnInit {
         console.log(data)
         this.additionService.showAdditions();
       });
-
   }  
 
   onFormSubmit() {

@@ -8,12 +8,12 @@ import { SubtractionComponent } from './subtraction/subtraction.component';
 import { MathHomeComponent } from './math-home/math-home.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddViewComponent } from './view/view.component';
+import { ViewComponent } from './view/view.component';
 
 
 
 @NgModule({
-  declarations: [AdditionComponent, SubtractionComponent, MathHomeComponent, AddViewComponent],
+  declarations: [AdditionComponent, SubtractionComponent, MathHomeComponent, ViewComponent],
   imports: [
     CommonModule,
     MathRoutingModule,

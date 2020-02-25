@@ -44,12 +44,20 @@ public class Subtraction {
 	}
 		
 	public Long getDifference() {
+		this.setDifference();
 		return difference;
 	}
 
 	public Subtraction() {
 		
 	}
+	public Subtraction(Long firstNumber, Long secondNumber) {
+		super();
+		this.firstNumber = firstNumber;
+		this.secondNumber = secondNumber;
+		this.difference = firstNumber-secondNumber;
+	}
+	
 	public Subtraction(Long id, Long firstNumber, Long secondNumber) {
 		super();
 		this.id = id;

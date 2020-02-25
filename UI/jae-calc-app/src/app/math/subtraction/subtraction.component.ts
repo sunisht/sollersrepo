@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { MathService } from 'src/app/math.service';
+import { MathService } from 'src/app/math/math.service';
 
 @Component({
   selector: 'app-subtraction',
