@@ -9,5 +9,6 @@ import com.mindtree.domain.Subtraction;
 @Repository
 public interface SubtractionRepository extends JpaRepository<Subtraction, Long>{
 	List<Subtraction> findAll();
+	@SuppressWarnings("unchecked")
 	Subtraction save(Subtraction subtraction);
 }
