@@ -42,7 +42,7 @@ class ApplicationTests {
 
 
         try {
-        	MyNumber number = new MyNumber(1,1,2,3);
+        	MyNumber number = new MyNumber(1,1.1,2.1,3.0);
         	numberRepository.save(number);
         	
 			Optional<MyNumber> optionalNumber = numberRepository.findById(1);
@@ -52,15 +52,15 @@ class ApplicationTests {
 			assertEquals(newNumber.getFirstNumber(), number.getFirstNumber());
 			assertEquals(newNumber.getSecondNumber(), number.getSecondNumber());
 			assertEquals(newNumber.getResult(), number.getResult());
-			number.setFirstNumber(3);
-			assertEquals((Integer)3,number.getFirstNumber());
-			number.setSecondNumber(5);
-			assertEquals((Integer)5,number.getSecondNumber());
-			number.setResult(5);
-			assertEquals((Integer)5,number.getResult());
+			number.setFirstNumber(3.1);
+			assertEquals((Double)3.1,number.getFirstNumber());
+			number.setSecondNumber(5.0);
+			assertEquals((Double)5.0,number.getSecondNumber());
+			number.setResult(5.1);
+			assertEquals((Double)5.1,number.getResult());
 			number.setId(5);
-			assertEquals((Integer)5,number.getResult());
-			
+			assertEquals((Integer)5,number.getId());
+		
 		
 			
 
@@ -74,7 +74,7 @@ class ApplicationTests {
 
 
        try {
-       		MyNumber number = new MyNumber(1,1,2,3);
+       		MyNumber number = new MyNumber(1,1.2,2.0,3.0);
        		numberRepository.save(number);
 			List<MyNumber> listNumber = numberRepository.findAll();
 			
@@ -110,7 +110,7 @@ class ApplicationTests {
 
        try {
        	
-      		MyNumber number = new MyNumber(1,1,2,3);
+      		MyNumber number = new MyNumber(1,1.1,2.0,3.0);
 
     	   numberService.save(number);
     	   List<MyNumber> myList =numberService.findAll();
@@ -131,8 +131,8 @@ class ApplicationTests {
    @Test
    public void testAddSubtract() {
 	   
-	   assertEquals(4,numberService.add(2,2));
-	   assertEquals(0,numberService.subtraction(2,2));
+	   assertEquals((Double)4.0,numberService.add(2.0,2.0));
+	   assertEquals((Double)0.0,numberService.subtraction(2.0,2.0));
 
 	   
 	   
@@ -141,7 +141,7 @@ class ApplicationTests {
    @Test
    public void testJsonObject() {
 	   
-	   assertNotNull(numberService.converToJson(1, 2, 3));
+	   assertNotNull(numberService.converToJson(1.1, 2.0, 3.0,"-"));
 	   
 	   
    }

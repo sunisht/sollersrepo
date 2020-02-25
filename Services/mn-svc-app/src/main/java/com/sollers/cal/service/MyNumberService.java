@@ -35,7 +35,7 @@ public interface MyNumberService {
 	 * @param b
 	 * @return a+b
 	 */
-	public int add(int a,int b);
+	public Double add(Double firstNumber,Double secondNumber);
 	/**
 	 * Author:Minh Nguyen
 	 * Purpose: subtract a and b return result
@@ -43,7 +43,7 @@ public interface MyNumberService {
 	 * @param b
 	 * @return a-b
 	 */
-	public int subtraction(int a,int b);
+	public Double subtraction(Double a,Double b);
 	/**
 	 * Author:Minh Nguyen
 	 * Purpose: convert to an json object
@@ -52,6 +52,6 @@ public interface MyNumberService {
 	 * @param result
 	 * @return json object
 	 */
-	public JSONObject converToJson(int firstNumber,int secondNumber, int result);
+	public JSONObject converToJson(Double firstNumber,Double secondNumber, Double result,String sign);
 
 }

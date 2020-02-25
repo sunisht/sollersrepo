@@ -35,22 +35,24 @@ public class MyNumberServiceImpl implements MyNumberService{
 		return myNumberRepository.findTopByOrderByIdDesc();
 	}
 	
-	public int add(int a, int b) {
+	public Double add(Double a, Double b) {
 		
 		return a+b;
 	}
 	
-	public int subtraction(int a,int b)
+	public Double subtraction(Double a,Double b)
 	{
 		return a-b;
 	}
 
-	public JSONObject converToJson(int firstNumber,int secondNumber, int result)
+	public JSONObject converToJson(Double firstNumber,Double secondNumber, Double result,String sign)
 	{
 		JSONObject jo = new JSONObject();
 		jo.put("firstNumber", firstNumber);
 		jo.put("secondNumber", secondNumber);
 		jo.put("result", result);
+		jo.put("sign",sign);
+
 		return jo;
 	}
 

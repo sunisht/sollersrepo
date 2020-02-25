@@ -16,16 +16,17 @@ public class MyNumber {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
-	Integer firstNumber;
-	Integer secondNumber;
-	Integer result;
+	Double firstNumber;
+	Double secondNumber;
+	Double result;
+	String sign;
 	
 	public MyNumber()
 	{
 		
 	}
 	
-	public MyNumber(Integer id, Integer firstNumber, Integer secondNumber, Integer result) {
+	public MyNumber(Integer id, Double firstNumber, Double secondNumber, Double result) {
 		super();
 		this.id = id;
 		this.firstNumber = firstNumber;
@@ -34,22 +35,22 @@ public class MyNumber {
 	}
 
 	
-	public Integer getFirstNumber() {
+	public Double getFirstNumber() {
 		return firstNumber;
 	}
-	public void setFirstNumber(Integer firstNumber) {
+	public void setFirstNumber(Double firstNumber) {
 		this.firstNumber = firstNumber;
 	}
-	public Integer getSecondNumber() {
+	public Double getSecondNumber() {
 		return secondNumber;
 	}
-	public void setSecondNumber(Integer secondNumber) {
+	public void setSecondNumber(Double secondNumber) {
 		this.secondNumber = secondNumber;
 	}
-	public Integer getResult() {
+	public Double getResult() {
 		return result;
 	}
-	public void setResult(Integer result) {
+	public void setResult(Double result) {
 		this.result = result;
 	}
 
@@ -60,8 +61,14 @@ public class MyNumber {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
+
+	public String getSign() {
+		return sign;
+	}
+
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
 	
 
 }
