@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.mindtree.domain.Addition;
 import com.mindtree.persistence.AdditionRepository;
 import com.mindtree.service.AdditionService;
 import com.mindtree.service.impl.AdditionServiceImpl;
@@ -23,7 +24,7 @@ public class CalcServiceTest {
 	
 	@Test
 	public void testAddRequest() {
-		
+//		when(additionRepository.save(Addition.class)).thenReturn(new Addition);
 	}
 
 }

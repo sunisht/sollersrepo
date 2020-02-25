@@ -7,19 +7,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.calcapp.domain.MathOperation;
 import com.mycompany.calcapp.exception.CustomError;
 import com.mycompany.calcapp.services.CalculatorServices;
 /**
- * 
- * @author Lawrence Nkafu
  * Controller class
  * contains mapping to addition, subtraction endpoints
+ * @author Lawrence Nkafu.
  *
  */
 @Controller
@@ -34,8 +33,8 @@ public class CalController {
 	 * @return ResponseEntity
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/Operations", method = RequestMethod.GET)
-	public ResponseEntity<?> readAll() {
+	@GetMapping(value = "/Operations")
+	public ResponseEntity<Object> readAll() {
 		List<MathOperation> list = services.viewDatabase();
 		return  new ResponseEntity<>(list,HttpStatus.OK);
 	}
@@ -45,9 +44,9 @@ public class CalController {
 	 * @param mathObject
 	 * @return
 	 */
-	@RequestMapping(value = "/Addition", method = RequestMethod.POST)
+	@PostMapping(value = "/Addition")
 	@ResponseBody
-	public ResponseEntity<?> add(@RequestBody MathOperation mathObject) {
+	public ResponseEntity<Object> add(@RequestBody MathOperation mathObject) {
 		
 		if (mathObject == null) {
 			CustomError error = new CustomError(100," Error performing addition operaiton. No "
@@ -63,9 +62,10 @@ public class CalController {
 	 * @param mathObject
 	 * @return
 	 */
-	@RequestMapping(value = "/Subtraction", method = RequestMethod.POST)
+
+	@PostMapping(value = "/Subtraction")
 	@ResponseBody
-	public ResponseEntity<?> subtract(@RequestBody MathOperation mathObject) {
+	public ResponseEntity<Object> subtract(@RequestBody MathOperation mathObject) {
 		if (mathObject == null) {
 			CustomError error = new CustomError(100," Error performing addition operaiton. No "
 					+ "data was stored in the Database");
