@@ -28,8 +28,8 @@ export class AdditionComponent implements OnInit {
 
     this.myNumber = this.numberForm.value;
     let myActualNumber = {
-      'firstNumber': parseInt(this.myNumber['firstNumber']),
-      'secondNumber': parseInt(this.myNumber['secondNumber']),
+      'firstNumber': this.myNumber['firstNumber'],
+      'secondNumber': this.myNumber['secondNumber']
     }
 
     this.mathService.addition(myActualNumber)
