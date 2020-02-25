@@ -9,4 +9,6 @@ import com.mindtree.domain.Addition;
 @Repository
 public interface AdditionRepository extends JpaRepository<Addition,Long>{
 	List<Addition> findAll();
+	@SuppressWarnings("unchecked")
+	Addition save(Addition addition);
 }
