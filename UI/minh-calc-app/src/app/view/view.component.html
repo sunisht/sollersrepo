@@ -3,11 +3,12 @@
     <table class="table">
             <tr>
                     <th scope="col">First Number</th>
+		     <th scope="col">Operation</th>
                     <th scope="col">Second Number</th>
                     <th scope="col">Result</th>
                 </tr>
   <tr *ngFor="let number of operations">
-            <td>{{number.firstNumber}}</td><td>{{number.secondNumber}}</td><td>{{number.result}}</td>
+            <td>{{number.firstNumber}}</td><td>{{number.sign}}</td><td>{{number.secondNumber}}</td><td>{{number.result}}</td>
 
 
         </tr>
