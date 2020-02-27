@@ -9,7 +9,6 @@ import { MathService } from 'src/app/math/math.service';
 })
 export class SubtractionComponent implements OnInit {
 
-  subtractions
   result
   SubtractionForm = new FormGroup({
     firstNumber: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
@@ -34,5 +33,9 @@ export class SubtractionComponent implements OnInit {
 
   onFormSubmit() {
     this.subtract();
+  }
+
+  onReset(){
+    this.SubtractionForm.reset();
   }
 }

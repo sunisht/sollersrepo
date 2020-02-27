@@ -9,7 +9,6 @@ import { MathService } from 'src/app/math/math.service';
 })
 export class AdditionComponent implements OnInit {
 
-  additions
   result
   AdditionForm = new FormGroup({
     firstNumber: new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
@@ -33,5 +32,8 @@ export class AdditionComponent implements OnInit {
 
   onFormSubmit() {
     this.add();
+  }
+  onReset(){
+    this.AdditionForm.reset();
   }
 }

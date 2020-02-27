@@ -3,7 +3,7 @@
         <div class="col-sm-3 m-2">
 
             <form [formGroup]="SubtractionForm" (ngSubmit)="onFormSubmit()">
-                <label><b>Subtraction Service</b></label>
+                <h4><b>Subtraction Service</b></h4>
                 <div class="form-group">
                     <label for="firstNumber">First Number: <br /></label>
                     <input class="form-control" type="text" formControlName="firstNumber">
@@ -15,6 +15,7 @@
                 <span>{{result}}</span>
                 <br>
                 <button type="submit" class="btn btn-success" [disabled]="!SubtractionForm.valid">Submit</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
             </form>
         </div>
     </div>
