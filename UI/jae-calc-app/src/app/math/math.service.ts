@@ -8,8 +8,10 @@ import { tap, map, catchError } from 'rxjs/operators';
 })
 export class MathService {
 
-  additionUrl = "http://localhost:8080/Addition"
-  subtractionUrl = "http://localhost:8080/Subtraction"
+  local_ip="34.68.98.102"
+  additionUrl = "http://"+this.local_ip+":8080/Addition"
+  subtractionUrl = "http://"+this.local_ip+":8080/Subtraction"
+
 
   public additions: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public subtractions: BehaviorSubject<any> = new BehaviorSubject<any>([]);
