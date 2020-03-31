@@ -29,4 +29,11 @@ public class AdditionServiceImpl implements AdditionService{
 		additionRepository.save(addition);
 		return addition;
 	}
+
+	@Override
+	public Addition deleteAddition(Long additionId) {
+		Addition addition = additionRepository.findOneById(additionId);
+		additionRepository.delete(addition);
+		return null;
+	}
 }

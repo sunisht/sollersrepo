@@ -28,5 +28,21 @@ export class ViewComponent implements OnInit {
       this.subtractViews = this.subtractViews.slice().reverse();
     });
   }
+
+  closeAdditionButton(add) {
+    this.mathService.closeAddition(add)
+    .subscribe((data: any) => {
+      console.log("Deleting addition item complete")
+      this.mathService.showAdditions()
+    })
+  }
+
+  closeSubtractionButton(subtract) {
+    this.mathService.closeSubtraction(subtract)
+    .subscribe((data: any) => {
+      console.log("Deleting subtraction item complete")
+      this.mathService.showSubtractions()
+    })
+  }
 }
 

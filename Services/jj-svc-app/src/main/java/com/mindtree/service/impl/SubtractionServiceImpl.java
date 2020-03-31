@@ -29,4 +29,11 @@ public class SubtractionServiceImpl implements SubtractionService{
 		subtractionRepository.save(subtraction);
 		return subtraction;
 	}
+
+	@Override
+	public Subtraction deleteSubtraction(Long subtractionId) {
+		Subtraction subtraction = subtractionRepository.findOneById(subtractionId);
+		subtractionRepository.delete(subtraction);
+		return null;
+	}
 }

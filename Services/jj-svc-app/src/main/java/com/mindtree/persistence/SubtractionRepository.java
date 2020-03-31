@@ -11,4 +11,5 @@ public interface SubtractionRepository extends JpaRepository<Subtraction, Long>{
 	List<Subtraction> findAll();
 	@SuppressWarnings("unchecked")
 	Subtraction save(Subtraction subtraction);
+	Subtraction findOneById(Long subtractionId);
 }

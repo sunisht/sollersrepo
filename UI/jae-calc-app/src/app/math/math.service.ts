@@ -19,6 +19,14 @@ export class MathService {
 
   }
 
+  closeAddition(addition){
+    return this.http.delete(this.additionUrl+"/Delete//" + addition.id)      
+  }
+  closeSubtraction(subtraction){
+    return this.http.delete(this.subtractionUrl+"/Delete/"+subtraction.id)
+
+  }
+
   saveAddition(addition){
     return this.http.post(this.additionUrl, addition)
       .pipe(
